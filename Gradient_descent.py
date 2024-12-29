@@ -62,8 +62,8 @@ def gradient_descent():
         partial_a = 2 * A * a + C * b + D
         partial_b = 2 * B * b + C * a + E
 
-        a = a - alpha * partial_a
-        b = b - alpha * partial_b
+        a = a - alpha * partial_a / n
+        b = b - alpha * partial_b / n
 
     print("The a and b calculated by BGD")
     print(f"a = {a:.4f} b = {b:.4f}")
@@ -100,6 +100,9 @@ def gradient_descent():
     plt.xlabel('Iteration')
     plt.ylabel('Loss')
     plt.title('SGD')
+
+    plt.subplots_adjust(wspace=0.5, hspace=0.5)
+
     plt.show()
 
 def calculate():
